@@ -28,7 +28,7 @@
   ],
   /* === Modules Left === */
   "custom/archicon": {
-    "format": "",
+    "format": "󰣇",
     "on-click": "wlogout",
     "tooltip": false
   },

@@ -46,7 +46,7 @@ curl -fsSL https://ollama.com/install.sh | sh
 curl -LO https://github.com/neovim/neovim/releases/download/v0.11.4/nvim-linux-x86_64.tar.gz
 tar -xvzf nvim-linux-x86_64.tar.gz
 sudo mkdir /usr/bin/nvim
-sudo mv ./nvim-linux-x86_64/ /usr/bin/nvim/
+sudo mv ./nvim-linux-x86_64/* /usr/bin/nvim/
 rm -rf ./nvim-linux-x86_64*
 echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
 
@@ -54,9 +54,9 @@ echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
-mv ./wallpapers Pictures/
-mv confs/fastfetch ~/.config/
-mv confs/hypr ~/.config/
-mv confs/waybar ~/.config/
+mv ./wallpapers ~/Pictures/
+mv ./confs/fastfetch ~/.config/
+mv ./confs/hypr ~/.config/
+mv ./confs/waybar ~/.config/
 
 echo "fastfetch" >> ~/.bashrc
