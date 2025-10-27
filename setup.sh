@@ -11,7 +11,7 @@ sudo pacman -Syu
 yay -Syu
 sudo pacman -Rs dunst
 # Install general system apps on the pacman repository
-sudo pacman -S base-devel git hyprpaper hyprlock gvfs gvfs-mtp gvfs-smb unzip p7zip unrar waybar blueman foot cava flatpak wl-clipboard zathura zathura-pdf-poppler vlc pavucontrol cliphist wlsunset playerctl bluez bluez-utils pipewire-pulse pipewire-bluetooth wireplumber qimgv fastfetch xdg-desktop-portal ninja cmake xdg-user-dirs
+sudo pacman -S base-devel hyprpaper hyprlock gvfs gvfs-mtp gvfs-smb unzip p7zip unrar waybar blueman foot cava flatpak wl-clipboard zathura zathura-pdf-poppler vlc pavucontrol cliphist wlsunset playerctl bluez bluez-utils pipewire-pulse pipewire-bluetooth wireplumber qimgv fastfetch xdg-desktop-portal ninja cmake xdg-user-dirs
 
 # Install nerd font
 sudo pacman -Ss jetbrains nerd
