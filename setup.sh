@@ -10,7 +10,7 @@ makepkg -si
 sudo pacman -Syu
 yay -Syu
 # Install general system apps on the pacman repository
-sudo pacman -S base-devel hyprland dolphin polkit-kde-agent qt5-wayland qt6-wayland grim slurp wofi xdg-desktop-portal-hyprland swaync hyprpaper hyprlock gvfs gvfs-mtp gvfs-smb unzip p7zip unrar waybar blueman foot cava flatpak wl-clipboard zathura zathura-pdf-poppler vlc pavucontrol cliphist wlsunset playerctl bluez bluez-utils pipewire-pulse pipewire-bluetooth wireplumber swayimg fastfetch xdg-desktop-portal ninja cmake xdg-user-dirs
+sudo pacman -S base-devel hyprland dolphin polkit-kde-agent ly qt5-wayland qt6-wayland grim slurp wofi xdg-desktop-portal-hyprland swaync hyprpaper hyprlock gvfs gvfs-mtp gvfs-smb unzip p7zip unrar waybar blueman foot cava flatpak wl-clipboard zathura zathura-pdf-poppler vlc pavucontrol cliphist wlsunset playerctl bluez bluez-utils pipewire-pulse pipewire-bluetooth wireplumber swayimg fastfetch xdg-desktop-portal ninja cmake xdg-user-dirs
 
 # Install nerd font
 sudo pacman -Ss jetbrains nerd
@@ -61,3 +61,6 @@ mv ./confs/swaync ~/.config/
 
 echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
 echo "fastfetch" >> ~/.bashrc
+
+sudo systemctl enable ly
+sudo systemctl start ly
