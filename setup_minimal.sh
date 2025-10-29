@@ -53,6 +53,8 @@ mv ./confs/fastfetch ~/.config/
 mv ./confs/hypr ~/.config/
 mv ./confs/waybar ~/.config/
 mv ./confs/swaync ~/.config/
+mv ./confs/rofi ~/.config/
+mv ./congs/wlogout ~/.config/
 
 echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
 echo "fastfetch" >> ~/.bashrc
