@@ -110,8 +110,6 @@ window#waybar.hidden {
   color: #89B4FA;
 }
 
-#workspaces button.active:hover {}
-
 /* Modules right */
 #taskbar {
   background: transparent;
@@ -152,8 +150,9 @@ window#waybar.hidden {
   min-width: 50px;
 }
 
-#pulseaudio-slider slider {}
-
+#pulseaudio-slider slider {
+  width: 200px;
+}
 
 #network {
   background: #CBA6F7;
