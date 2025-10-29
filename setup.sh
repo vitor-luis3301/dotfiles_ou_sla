@@ -52,13 +52,14 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
 mv ./wallpapers ~/Pictures/
+mv ./confs/rofi-themes/* /usr/share/rofi/themes
 
 mv ./confs/fastfetch ~/.config/
 mv ./confs/hypr ~/.config/
 mv ./confs/waybar ~/.config/
 mv ./confs/swaync ~/.config/
 mv ./confs/rofi ~/.config/
-mv ./congs/wlogout ~/.config/
+mv ./confs/wlogout ~/.config/
 
 echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
 echo "fastfetch" >> ~/.bashrc
