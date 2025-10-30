@@ -40,13 +40,6 @@ sudo mv ./nvim-linux-x86_64/* /usr/bin/nvim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
-git clone https://github.com/abishekvashok/cmatrix.git
-cd cmatrix
-mkdir -p Build && cd Build
-cmake ..
-make
-make install
-
 mv ./wallpapers ~/Pictures/
 
 mv ./confs/fastfetch ~/.config/
@@ -62,4 +55,4 @@ echo "fastfetch" >> ~/.bashrc
 sudo systemctl enable ly
 sudo systemctl start ly
 
-rm -rf ./nvim-linux-x86_64* ./cmatrix
+rm -rf ./nvim-linux-x86_64*
