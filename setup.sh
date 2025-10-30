@@ -11,11 +11,11 @@ sudo pacman -Syu
 yay -Syu 
 # Install general system apps on the pacman repository
 sudo pacman -S --needed --noconfirm ninja cmake ly dolphin grim slurp rofi \
-hyprland hyprshade hypridle hyprpaper hyprlock hyprshot hyprpicker hyprland-qt-support hyprland-qutils hyprsunset \
+hyprland hypridle hyprpaper hyprlock hyprshot hyprpicker hyprland-qt-support hyprsunset \
 swaync swayimg waybar cliphist foot alacritty cava fastfetch cowsay gnome-calendar gnome-calculator \
 zathura zathura-pdf-poppler vlc gvfs gvfs-mtp gvfs-smb xarchiver unzip p7zip unrar blueman flatpak wine \
 wl-clipboard pavucontrol playerctl bluez bluez-utils wireplumber polkit-kde-agent \
-qt5-wayland qt6-wayland xdg-desktop-portal-hyprland xdg-user-dirs xdg-desktop-portal pipewire-pulse
+qt5-wayland qt6-wayland xdg-desktop-portal-hyprland xdg-user-dirs xdg-desktop-portal pipewire-pulse libnotify
 
 xdg-user-dirs-update
 
@@ -24,7 +24,7 @@ sudo pacman -Ss jetbrains nerd
 sudo pacman -S ttf-jetbrains-mono-nerd
 
 # Install with AUR
-yay -S vicinae-bin wlogout cbonsai-git kiview cmatrix-git
+yay -S vicinae-bin wlogout cbonsai-git kiview cmatrix-git hyprshade
 
 # Install various flatpaks
 flatpak install flathub app.zen_browser.zen
