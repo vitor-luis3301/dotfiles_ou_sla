@@ -1,0 +1,127 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 5,
+  "modules-left": [
+    "custom/separator",
+    "hyprland/workspaces",
+    "custom/separator",
+    "battery",
+    "custom/separator",
+    "tray",
+    "bluetooth",
+    "custom/separator",
+    "custom/cava"
+  ],
+  "modules-center": [
+    "custom/separator",
+    "clock",
+    "custom/separator"
+  ],
+  "modules-right": [
+    "custom/clipboard",
+    "custom/separator",
+    "memory",
+    "temperature",
+    "custom/separator",
+    "wireplumber",
+    "custom/separator",
+    "custom/powermenu",
+    "custom/separator"
+  ],
+  "hyprland/workspaces": {
+    "format": "{id}"
+  },
+  "clock": {
+    "format": "{:%d.%m.%Y * %H:%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "memory": {
+    "interval": 30,
+    "format": "RAM: {used:0.1f}GB"
+  },
+  "temperature": {
+    "format": " CPU: {temperatureC}°C"
+  },
+  "battery": {
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "{timeTo}\nMoc: {power}W",
+    "on-click": "asusctl profile -n"
+  },
+  "bluetooth": {
+    "format": "BT {status}",
+    "format-disabled": "BT[OFF]",
+    "format-off": "BT[OFF]",
+    "format-on": "BT[ON]",
+    "format-connected": "BT[{device_alias}]",
+    "format-connected-battery": "{device_alias} {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} połączenia",
+    "tooltip-format-disabled": "Bluetooth wyłączony",
+    "tooltip-format-off": "Bluetooth wyłączony",
+    "tooltip-format-on": "Bluetooth włączony - brak połączeń",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} połączenia\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "blueberry"
+  },
+  "custom/cava": {
+    "exec": "~/.config/waybar/scripts/cava.sh",
+    "format": "{}",
+    "tooltip": false,
+    "on-click": "pavucontrol"
+  },
+  "wireplumber": {
+    "format": "󰕾 {volume}%",
+    "max-volume": 100,
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 16
+  },
+  "custom/separator": {
+    "format": "/",
+    "tooltip": false
+  },
+  "custom/powermenu": {
+    "format": "󰣇",
+    "tooltip": false,
+    "on-click": "wlogout"
+  },
+  "custom/clipboard": {
+    "format": "cc",
+    "on-click": "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'",
+    "tooltip": true,
+    "tooltip-format": "Historia schowka"
+  }
+}
