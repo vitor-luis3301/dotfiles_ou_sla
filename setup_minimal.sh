@@ -48,6 +48,8 @@ mv ./confs/wlogout ~/.config/
 echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
 echo "fastfetch" >> ~/.bashrc
 
-./theme frieren light
+./theme.sh frieren light
+
+mv theme.sh ~/
 
 rm -rf ./nvim-linux-x86_64* ./yay
