@@ -7,6 +7,9 @@ cd yay
 makepkg -si
 
 cd ..
+
+sudo systemctl enable --now bluetooth.service
+
 # Install general system apps on the pacman repository
 sudo pacman -S --needed --noconfirm ninja cmake rofi \
 hypridle hyprpaper hyprlock hyprshot hyprpicker hyprland-qt-support hyprsunset \
@@ -18,22 +21,21 @@ xdg-user-dirs xdg-desktop-portal pipewire-pulse libnotify python python-pywal
 xdg-user-dirs-update
 
 # Install nerd font
-sudo pacman -Ss jetbrains nerd
-sudo pacman -S ttf-jetbrains-mono-nerd
+sudo pacman --noconfirm -S ttf-jetbrains-mono-nerd
 
 # Install with AUR
-yay --noprovides --answerdiff None --answerclean None --noconfirm vicinae-bin wlogout cbonsai-git kiview cmatrix-git hyprshade
+yay --answerdiff None --answerclean None --noconfirm vicinae-bin wlogout cbonsai-git kiview cmatrix-git hyprshade
 
 # Install various flatpaks
-flatpak install flathub app.zen_browser.zen
-flatpak install flathub com.brave.Browser
-flatpak install flathub com.valvesoftware.Steam
-flatpak install flathub com.heroicgameslauncher.hgl
-flatpak install flathub org.vinegarhq.Sober
-flatpak install flathub net.pcsx2.PCSX2
-flatpak install flathub io.github.giantpinkrobots.flatsweep
-flatpak install flathub org.srb2.SRB2
-flatpak install flathub com.spotify.Client
+flatpak install -y flathub app.zen_browser.zen
+flatpak install -y flathub com.brave.Browser
+flatpak install -y flathub com.valvesoftware.Steam
+flatpak install -y flathub com.heroicgameslauncher.hgl
+flatpak install -y flathub org.vinegarhq.Sober
+flatpak install -y flathub net.pcsx2.PCSX2
+flatpak install -y flathub io.github.giantpinkrobots.flatsweep
+flatpak install -y flathub org.srb2.SRB2
+flatpak install -y flathub com.spotify.Client
 
 # Install ollama
 curl -fsSL https://ollama.com/install.sh | sh

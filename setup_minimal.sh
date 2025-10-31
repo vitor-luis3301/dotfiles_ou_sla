@@ -7,6 +7,9 @@ cd yay
 makepkg -si
 
 cd ..
+
+sudo systemctl enable --now bluetooth.service
+
 # Install general system apps on the pacman repository
 sudo pacman -S --needed --noconfirm ninja cmake rofi \
 hypridle hyprpaper hyprlock hyprshot hyprpicker hyprland-qt-support hyprsunset \
@@ -18,14 +21,10 @@ xdg-user-dirs xdg-desktop-portal pipewire-pulse libnotify python python-pywal
 xdg-user-dirs-update
 
 # Install nerd font
-sudo pacman -Ss jetbrains nerd
-sudo pacman -S ttf-jetbrains-mono-nerd
+sudo pacman --noconfirm -S ttf-jetbrains-mono-nerd
 
 # Install with AUR
-yay --noprovides --answerdiff None --answerclean None --noconfirm vicinae-bin wlogout cbonsai-git kiview cmatrix-git hyprshade
-
-# Install ollama
-curl -fsSL https://ollama.com/install.sh | sh
+yay --answerdiff None --answerclean None --noconfirm vicinae-bin wlogout cbonsai-git kiview cmatrix-git hyprshade
 
 # Neovim
 
@@ -35,15 +34,15 @@ tar -xvzf nvim-linux-x86_64.tar.gz
 sudo mkdir /usr/bin/nvim
 sudo mv ./nvim-linux-x86_64/* /usr/bin/nvim
 
-mv ./wallpapers ~/Pictures/
-mv ./confs/rofi-themes/* /usr/local/share/rofi/themes
+cp ./wallpapers ~/Pictures/
+cp ./confs/rofi-themes/* /usr/local/share/rofi/themes
 
-mv ./confs/fastfetch ~/.config/
-mv ./confs/hypr ~/.config/
-mv ./confs/waybar ~/.config/
-mv ./confs/swaync ~/.config/
-mv ./confs/rofi ~/.config/
-mv ./confs/wlogout ~/.config/
+cp ./confs/fastfetch ~/.config/
+cp ./confs/hypr ~/.config/
+cp ./confs/waybar ~/.config/
+cp ./confs/swaync ~/.config/
+cp ./confs/rofi ~/.config/
+cp ./confs/wlogout ~/.config/
 
 echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
 echo "fastfetch" >> ~/.bashrc
