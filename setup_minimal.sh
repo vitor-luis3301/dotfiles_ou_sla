@@ -48,9 +48,6 @@ mv ./confs/wlogout ~/.config/
 echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
 echo "fastfetch" >> ~/.bashrc
 
-sudo systemctl enable ly
-sudo systemctl start ly
-
 ./theme frieren light
 
 rm -rf ./nvim-linux-x86_64* ./yay

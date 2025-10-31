@@ -73,7 +73,7 @@
     "format-charging": "󰂄 {capacity}%",
     "format-plugged": "󰚥 {capacity}%",
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-    "tooltip-format": "{timeTo}\nMoc: {power}W",
+    "tooltip-format": "{timeTo}\nPower: {power}W",
     "on-click": "asusctl profile -n"
   },
   "bluetooth": {
@@ -83,10 +83,10 @@
     "format-on": "BT[ON]",
     "format-connected": "BT[{device_alias}]",
     "format-connected-battery": "{device_alias} {device_battery_percentage}%",
-    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} połączenia",
-    "tooltip-format-disabled": "Bluetooth wyłączony",
-    "tooltip-format-off": "Bluetooth wyłączony",
-    "tooltip-format-on": "Bluetooth włączony - brak połączeń",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connections",
+    "tooltip-format-disabled": "Bluetooth deactivated",
+    "tooltip-format-off": "Bluetooth deactivated",
+    "tooltip-format-on": "Bluetooth activated - no connections",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} połączenia\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
@@ -122,6 +122,6 @@
     "format": "cc",
     "on-click": "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'",
     "tooltip": true,
-    "tooltip-format": "Historia schowka"
+    "tooltip-format": "Clipboard"
   }
 }

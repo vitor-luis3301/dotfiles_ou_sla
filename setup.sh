@@ -62,15 +62,6 @@ cp ./confs/wlogout ~/.config/
 echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
 echo "fastfetch" >> ~/.bashrc
 
-sudo systemctl enable ly
-sudo systemctl start ly
-
-for dir in ~/Pictures/wallpapers/*; do
-  if [ -d "$dir" ]; then
-    wal -n -i ~/Pictures/wallpapers/"$dir"
-  fi
-done
-
 ./theme frieren light
 
 rm -rf ./nvim-linux-x86_64* ./yay
