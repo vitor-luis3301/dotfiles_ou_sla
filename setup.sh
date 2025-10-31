@@ -6,16 +6,14 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
-# Update packages
-sudo pacman -Syu
-yay -Syu 
+cd ..
 # Install general system apps on the pacman repository
-sudo pacman -S --needed --noconfirm ninja cmake ly dolphin grim slurp rofi \
-hyprland hypridle hyprpaper hyprlock hyprshot hyprpicker hyprland-qt-support hyprsunset \
+sudo pacman -S --needed --noconfirm ninja cmake rofi \
+hypridle hyprpaper hyprlock hyprshot hyprpicker hyprland-qt-support hyprsunset \
 swaync swayimg waybar cliphist foot alacritty cava fastfetch cowsay gnome-calendar gnome-calculator \
 zathura zathura-pdf-poppler vlc gvfs gvfs-mtp gvfs-smb xarchiver unzip p7zip unrar blueman flatpak wine \
-wl-clipboard pavucontrol playerctl bluez bluez-utils wireplumber polkit-kde-agent \
-qt5-wayland qt6-wayland xdg-desktop-portal-hyprland xdg-user-dirs xdg-desktop-portal pipewire-pulse libnotify
+wl-clipboard pavucontrol playerctl bluez bluez-utils wireplumber \
+xdg-user-dirs xdg-desktop-portal pipewire-pulse libnotify python python-pywal
 
 xdg-user-dirs-update
 
@@ -24,7 +22,7 @@ sudo pacman -Ss jetbrains nerd
 sudo pacman -S ttf-jetbrains-mono-nerd
 
 # Install with AUR
-yay -S vicinae-bin wlogout cbonsai-git kiview cmatrix-git hyprshade
+yay --noprovides --answerdiff None --answerclean None --noconfirm vicinae-bin wlogout cbonsai-git kiview cmatrix-git hyprshade
 
 # Install various flatpaks
 flatpak install flathub app.zen_browser.zen
@@ -51,15 +49,15 @@ sudo mv ./nvim-linux-x86_64/* /usr/bin/nvim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
-mv ./wallpapers ~/Pictures/
-mv ./confs/rofi-themes/* /usr/share/rofi/themes
+cp ./wallpapers ~/Pictures/
+cp ./confs/rofi-themes/* /usr/local/share/rofi/themes
 
-mv ./confs/fastfetch ~/.config/
-mv ./confs/hypr ~/.config/
-mv ./confs/waybar ~/.config/
-mv ./confs/swaync ~/.config/
-mv ./confs/rofi ~/.config/
-mv ./confs/wlogout ~/.config/
+cp ./confs/fastfetch ~/.config/
+cp ./confs/hypr ~/.config/
+cp ./confs/waybar ~/.config/
+cp ./confs/swaync ~/.config/
+cp ./confs/rofi ~/.config/
+cp ./confs/wlogout ~/.config/
 
 echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
 echo "fastfetch" >> ~/.bashrc
@@ -67,4 +65,12 @@ echo "fastfetch" >> ~/.bashrc
 sudo systemctl enable ly
 sudo systemctl start ly
 
-rm -rf ./nvim-linux-x86_64* ./cmatrix
+for dir in ~/Pictures/wallpapers/*; do
+  if [ -d "$dir" ]; then
+    wal -n -i ~/Pictures/wallpapers/"$dir"
+  fi
+done
+
+./theme frieren light
+
+rm -rf ./nvim-linux-x86_64* ./yay

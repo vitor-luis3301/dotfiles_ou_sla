@@ -1,10 +1,4 @@
-@import url("file:///home/kvdgs/.cache/wal/colors-waybar.css");
-
-/* Usuń lub zakomentuj te linie - będziesz używać kolorów z wal */
-/* @define-color foreground #eeeeee; */
-/* @define-color foreground-inactive #aaaaaa; */
-/* @define-color background #000000; */
-/* @define-color hover-bg #094359; */
+@import url("file:///~/.cache/wal/colors-waybar.css");
 
 * {
     font-family: "JetBrainsMono Nerd Font Mono", monospace;
@@ -16,7 +10,7 @@
 }
 
 #waybar {
-    color: @color15;  /* jasny kolor z palety wal */
+    color: @color15;
     background-color: @background;
 }
 
@@ -29,15 +23,15 @@
 }
 
 #workspaces button:hover {
-    background-color: @color1;  /* accent color z wal */
+    background-color: @color1;
 }
 
 #workspaces button.active {
-    background-color: @color2;  /* inny accent color */
+    background-color: @color2;
 }
 
 #workspaces button.empty {
-    color: @color8;  /* ciemniejszy kolor */
+    color: @color8;
 }
 
 #clock, #temperature, #memory, #wireplumber {
@@ -49,7 +43,7 @@
 }
 
 #temperature.critical {
-    color: @color1;  /* czerwony z palety */
+    color: @color1;
 }
 
 #tray {
