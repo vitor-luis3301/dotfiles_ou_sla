@@ -26,8 +26,6 @@ sudo pacman --noconfirm -S ttf-jetbrains-mono-nerd
 # Install with AUR
 yay --answerdiff None --answerclean None --noconfirm vicinae-bin wlogout cbonsai-git kiview cmatrix-git hyprshade
 
-# Neovim
-
 # Install Neovim's latest version from GitHub
 curl -LO https://github.com/neovim/neovim/releases/download/v0.11.4/nvim-linux-x86_64.tar.gz
 tar -xvzf nvim-linux-x86_64.tar.gz
@@ -43,6 +41,7 @@ cp ./confs/waybar ~/.config/
 cp ./confs/swaync ~/.config/
 cp ./confs/rofi ~/.config/
 cp ./confs/wlogout ~/.config/
+cp ./confs/cava ~/.config/
 
 echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
 echo "fastfetch" >> ~/.bashrc

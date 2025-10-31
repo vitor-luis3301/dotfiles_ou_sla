@@ -60,6 +60,7 @@ cp ./confs/waybar ~/.config/
 cp ./confs/swaync ~/.config/
 cp ./confs/rofi ~/.config/
 cp ./confs/wlogout ~/.config/
+cp ./confs/cava ~/.config/
 
 echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
 echo "fastfetch" >> ~/.bashrc

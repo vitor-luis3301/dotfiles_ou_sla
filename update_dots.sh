@@ -1,11 +1,12 @@
 #!/bin/bash
-mv ./wallpapers ~/Pictures/
+cp ./wallpapers ~/Pictures/
 
 rm -rf ~/.config/fastfetch ~/.config/hypr ~/.config/waybar ~/.config/swaync ~/.config/rofi ~/.config/wlogout
 
-mv ./confs/fastfetch ~/.config/
-mv ./confs/hypr ~/.config/
-mv ./confs/waybar ~/.config/
-mv ./confs/swaync ~/.config/
-mv ./confs/rofi ~/.config/
-mv ./congs/wlogout ~/.config/
+cp ./confs/fastfetch ~/.config/
+cp ./confs/hypr ~/.config/
+cp ./confs/waybar ~/.config/
+cp ./confs/swaync ~/.config/
+cp ./confs/rofi ~/.config/
+cp ./congs/wlogout ~/.config/
+cp ./confs/cava ~/.config/
