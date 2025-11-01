@@ -1,11 +1,22 @@
 #!/bin/bash
 
-if [ -n $1] && [ -n $2 ]; then 
-  export THEME=$1 # ex.: frieren
-  export COLOR=$2  # "dark" or "light"
+THEME_FILE="$HOME/Theme.txt"
+
+if [ -n "$1" ] && [ -n "$2" ]; then 
+  THEME=$1
+  COLOR=$2
+
+  echo "$THEME:$COLOR" > $THEME_FILE
+else
+  if [ -f $THEME_FILE ]; then
+    IFS=":" read -r THEME COLOR < $THEME_FILE
 fi
 
-wal -n -i "~/Pictures/wallpapers/$THEME/$COLOR.jpg"
-hyprctl hyprpaper reload ,"~/Pictures/wallpapers/$THEME/$COLOR.jpg"
+IMAGE="$HOME/Pictures/wallpapers/$THEME/$COLOR.jpg"
+
+wal -n -i "$IMAGE"
+hyprctl hyprpaper reload , "$IMAGE"
 killall waybar
 hyprctl dispatch exec waybar
+
+hyprctl reload
