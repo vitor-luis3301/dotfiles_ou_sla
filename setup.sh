@@ -24,7 +24,7 @@ xdg-user-dirs-update
 sudo pacman --noconfirm -S ttf-jetbrains-mono-nerd
 
 # Install with AUR
-yay --answerdiff None --answerclean None --noconfirm vicinae-bin wlogout cbonsai-git kiview cmatrix-git hyprshade
+yay --answerdiff None --answerclean None --noconfirm -S vicinae-bin wlogout cbonsai-git kiview cmatrix-git hyprshade
 
 # Install various flatpaks
 flatpak install -y flathub app.zen_browser.zen
@@ -52,7 +52,7 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
 cp ./wallpapers ~/Pictures/
-cp ./confs/rofi-themes/* /usr/local/share/rofi/themes
+cp ./confs/rofi-themes/* /usr/share/rofi/themes
 
 cp ./confs/fastfetch ~/.config/
 cp ./confs/hypr ~/.config/

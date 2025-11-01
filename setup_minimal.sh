@@ -24,7 +24,7 @@ xdg-user-dirs-update
 sudo pacman --noconfirm -S ttf-jetbrains-mono-nerd
 
 # Install with AUR
-yay --answerdiff None --answerclean None --noconfirm vicinae-bin wlogout cbonsai-git kiview cmatrix-git hyprshade
+yay --answerdiff None --answerclean None --noconfirm -S vicinae-bin wlogout cbonsai-git kiview cmatrix-git hyprshade
 
 # Install Neovim's latest version from GitHub
 curl -LO https://github.com/neovim/neovim/releases/download/v0.11.4/nvim-linux-x86_64.tar.gz
@@ -33,7 +33,7 @@ sudo mkdir /usr/bin/nvim
 sudo mv ./nvim-linux-x86_64/* /usr/bin/nvim
 
 cp ./wallpapers ~/Pictures/
-cp ./confs/rofi-themes/* /usr/local/share/rofi/themes
+cp ./confs/rofi-themes/* /usr/share/rofi/themes
 
 cp ./confs/fastfetch ~/.config/
 cp ./confs/hypr ~/.config/
