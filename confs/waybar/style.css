@@ -1,4 +1,4 @@
-@import url("file:///~/.cache/wal/colors-waybar.css");
+@import ".cache/wal/colors-waybar.css";
 
 * {
     font-family: "JetBrainsMono Nerd Font Mono", monospace;
@@ -11,7 +11,14 @@
 
 #waybar {
     color: @color15;
-    background-color: @background;
+    background: transparent;
+}
+
+.modules-left, .modules-center, .modules-right {
+  padding: 8px;
+  margin: 3px;
+  background-color: @background;
+  border-radius: 100px;
 }
 
 #workspaces button {
