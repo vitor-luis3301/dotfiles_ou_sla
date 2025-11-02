@@ -11,12 +11,12 @@ cd ..
 sudo systemctl enable --now bluetooth.service
 
 # Install general system apps on the pacman repository
-sudo pacman -S --needed --noconfirm ninja cmake rofi \
-hypridle hyprpaper hyprlock hyprshot hyprpicker hyprland-qt-support hyprsunset \
+sudo pacman -S --needed --noconfirm hypridle hyprpaper hyprlock hyprshot hyprpicker hyprland-qt-support hyprsunset \
 swaync swayimg waybar cliphist foot alacritty cava fastfetch cowsay gnome-calendar gnome-calculator \
 zathura zathura-pdf-poppler vlc gvfs gvfs-mtp gvfs-smb xarchiver unzip p7zip unrar blueman flatpak wine \
 wl-clipboard pavucontrol playerctl bluez bluez-utils wireplumber \
-xdg-user-dirs xdg-desktop-portal pipewire-pulse libnotify python python-pywal
+xdg-user-dirs xdg-desktop-portal pipewire-pulse libnotify python python-pywal \
+ninja cmake
 
 xdg-user-dirs-update
 
@@ -24,7 +24,7 @@ xdg-user-dirs-update
 sudo pacman --noconfirm -S ttf-jetbrains-mono-nerd
 
 # Install with AUR
-yay --answerdiff None --answerclean None --noconfirm -S vicinae-bin wlogout cbonsai-git kiview cmatrix-git hyprshade
+yay --answerdiff None --answerclean None --noconfirm -S vicinae-bin wlogout cbonsai kiview cmatrix-git hyprshade
 
 # Install Neovim's latest version from GitHub
 curl -LO https://github.com/neovim/neovim/releases/download/v0.11.4/nvim-linux-x86_64.tar.gz
@@ -49,5 +49,8 @@ echo "fastfetch" >> ~/.bashrc
 ./theme.sh frieren light
 
 mv theme.sh ~/
+
+sudo systemctl enable bluetooth
+sudo systemctl start bluetooth
 
 rm -rf ./nvim-linux-x86_64* ./yay
