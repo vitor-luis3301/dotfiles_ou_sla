@@ -15,8 +15,8 @@ sudo pacman -S --needed --noconfirm hypridle hyprpaper hyprlock hyprshot hyprpic
 swaync swayimg waybar cliphist foot alacritty cava fastfetch cowsay gnome-calendar gnome-calculator \
 zathura zathura-pdf-poppler vlc gvfs gvfs-mtp gvfs-smb xarchiver unzip p7zip unrar blueman flatpak wine \
 wl-clipboard pavucontrol playerctl bluez bluez-utils wireplumber \
-xdg-user-dirs xdg-desktop-portal pipewire-pulse libnotify python python-pywal \
-ninja cmake
+xdg-user-dirs xdg-desktop-portal pipewire-pulse libnotify python xdg-utils \
+ninja cmake gum
 
 xdg-user-dirs-update
 
@@ -24,19 +24,20 @@ xdg-user-dirs-update
 sudo pacman --noconfirm -S ttf-jetbrains-mono-nerd
 
 # Install with AUR
-yay --answerdiff None --answerclean None --noconfirm -S vicinae-bin wlogout cbonsai kiview cmatrix-git hyprshade
+yay --answerdiff None --answerclean None --noconfirm -S vicinae-bin wlogout cbonsai kiview cmatrix-git hyprshade nomacs hellwal
 
 # Install various flatpaks
-flatpak install -y flathub app.zen_browser.zen
-flatpak install -y flathub com.brave.Browser
-flatpak install -y flathub com.valvesoftware.Steam
-flatpak install -y flathub com.heroicgameslauncher.hgl
-flatpak install -y flathub org.vinegarhq.Sober
-flatpak install -y flathub net.pcsx2.PCSX2
-flatpak install -y flathub io.github.giantpinkrobots.flatsweep
-flatpak install -y flathub org.srb2.SRB2
-flatpak install -y flathub com.spotify.Client
-flatpak install -y flathub org.gnome.gitlab.somas.Apostrophe
+flatpak install -y flathub app.zen_browser.zen \
+com.brave.Browser com.valvesoftware.Steam com.heroicgameslauncher.hgl \
+org.vinegarhq.Sober net.pcsx2.PCSX2 io.github.giantpinkrobots.flatsweep \
+org.srb2.SRB2 com.spotify.Client org.gnome.gitlab.somas.Apostrophe \
+com.obsproject.Studio org.videolan.VLC md.obsidian.Obsidian
+
+# Just gonna leave this here in case I figure it out how to put Wacom drivers in Arch
+# Or when I feel like it
+#
+# flatpak install -y flathub org.kde.krita com.github.libresprite.LibreSprite com.github.PintaProject.Pinta \
+# fm.reaper.Reaper org.kartkrew.RingRacers
 
 # Install ollama
 curl -fsSL https://ollama.com/install.sh | sh
@@ -52,16 +53,12 @@ sudo mv ./nvim-linux-x86_64/* /usr/bin/nvim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
-cp ./wallpapers ~/Pictures/
-cp ./confs/rofi-themes/* /usr/share/rofi/themes
+# SDDM Theme (Credits to keyitdev. https://github.com/Keyitdev/sddm-astronaut-theme)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
 
-cp ./confs/fastfetch ~/.config/
-cp ./confs/hypr ~/.config/
-cp ./confs/waybar ~/.config/
-cp ./confs/swaync ~/.config/
-cp ./confs/rofi ~/.config/
-cp ./confs/wlogout ~/.config/
-cp ./confs/cava ~/.config/
+cp ./wallpapers ~/Pictures/
+
+cp ./confs/* ~/.config/
 
 echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
 echo "fastfetch" >> ~/.bashrc
