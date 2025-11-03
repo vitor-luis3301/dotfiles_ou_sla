@@ -1,4 +1,5 @@
-@import ".cache/wal/colors-waybar.css";
+/* Replace by your home directory*/
+@import "/home/vitorlu/.cache/wal/colors-waybar.css";
 
 * {
     font-family: "JetBrainsMono Nerd Font Mono", monospace;
@@ -34,7 +35,7 @@
 }
 
 #workspaces button.active {
-    background-color: @color2;
+    background-color: @color5;
 }
 
 #workspaces button.empty {

@@ -15,16 +15,10 @@ else
 fi
 declare -a colors
 
-IMAGE="$HOME/Pictures/wallpapers/$THEME/$COLOR.jpg"
+IMAGE="$HOME/Pictures/wallpapers/$THEME/$THEME-$COLOR.jpg"
 
-wal -n -i "$IMAGE"
+hellwal -i "$IMAGE"
 
-i=0
-while IFS= read -r line; do
-  colors[i]="${line/'#'}"
-  ((i++))
-done < "$HOME/.cache/wal/colors"
-
-hyprctl keyword "general:col.active_border rgba('${colors[2]}ee') rgba('${colors[6]}ee') 45deg"
+hyprctl reload
 hyprctl hyprpaper reload , "$IMAGE"
 hyprctl dispatch exec waybar
