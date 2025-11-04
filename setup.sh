@@ -24,7 +24,7 @@ xdg-user-dirs-update
 sudo pacman --noconfirm -S ttf-jetbrains-mono-nerd
 
 # Install with AUR
-yay --answerdiff None --answerclean None --noconfirm -S vicinae-bin wlogout cbonsai kiview cmatrix-git hyprshade nomacs hellwal
+yay --answerdiff None --answerclean None --noconfirm -S vicinae-bin wlogout cbonsai kiview cmatrix-git hyprshade nomacs hellwal dyn-wall-rs
 
 # Install various flatpaks
 flatpak install -y flathub app.zen_browser.zen \
