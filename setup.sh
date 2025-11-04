@@ -12,7 +12,7 @@ sudo systemctl enable --now bluetooth.service
 
 # Install general system apps on the pacman repository
 sudo pacman -S --needed --noconfirm hypridle hyprpaper hyprlock hyprshot hyprpicker hyprland-qt-support hyprsunset \
-swaync swayimg waybar cliphist foot alacritty cava fastfetch cowsay gnome-calendar gnome-calculator \
+swaync waybar cliphist foot alacritty cava fastfetch cowsay gnome-calendar gnome-calculator \
 zathura zathura-pdf-poppler vlc gvfs gvfs-mtp gvfs-smb xarchiver unzip p7zip unrar blueman flatpak wine \
 wl-clipboard pavucontrol playerctl bluez bluez-utils wireplumber \
 xdg-user-dirs xdg-desktop-portal pipewire-pulse libnotify python xdg-utils \
@@ -24,7 +24,7 @@ xdg-user-dirs-update
 sudo pacman --noconfirm -S ttf-jetbrains-mono-nerd
 
 # Install with AUR
-yay --answerdiff None --answerclean None --noconfirm -S vicinae-bin wlogout cbonsai kiview cmatrix-git hyprshade nomacs hellwal dyn-wall-rs
+yay --answerdiff None --answerclean None --noconfirm -S vicinae-bin wlogout cbonsai cmatrix-git hyprshade nomacs hellwal dyn-wall-rs
 
 # Install various flatpaks
 flatpak install -y flathub app.zen_browser.zen \
