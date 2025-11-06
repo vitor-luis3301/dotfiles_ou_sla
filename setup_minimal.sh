@@ -16,15 +16,18 @@ swaync waybar cliphist foot alacritty cava fastfetch cowsay gnome-calendar gnome
 zathura zathura-pdf-poppler vlc gvfs gvfs-mtp gvfs-smb xarchiver unzip p7zip unrar blueman flatpak wine \
 wl-clipboard pavucontrol playerctl bluez bluez-utils wireplumber \
 xdg-user-dirs xdg-desktop-portal pipewire-pulse libnotify python xdg-utils \
-ninja cmake
+ninja cmake gum
 
+# Make user directories automatically (~/Desktop, ~/Videos, ~/Downloads, etc.)
 xdg-user-dirs-update
 
 # Install nerd font
 sudo pacman --noconfirm -S ttf-jetbrains-mono-nerd
 
 # Install with AUR
-yay --answerdiff None --answerclean None --noconfirm -S vicinae-bin wlogout cbonsai cmatrix-git hyprshade nomacs hellwal dyn-wall-rs
+yay --answerdiff None --answerclean None --noconfirm -S vicinae-bin wlogout cbonsai cmatrix-git hyprshade nomacs hellwal dyn-wall-rs ttf-twemoji
+
+# Neovim
 
 # Install Neovim's latest version from GitHub
 curl -LO https://github.com/neovim/neovim/releases/download/v0.11.4/nvim-linux-x86_64.tar.gz
@@ -32,18 +35,27 @@ tar -xvzf nvim-linux-x86_64.tar.gz
 sudo mkdir /usr/bin/nvim
 sudo mv ./nvim-linux-x86_64/* /usr/bin/nvim
 
-cp ./wallpapers ~/Pictures/
+# Put backgrounds in proper directory
+cp -r ./wallpapers ~/Pictures/
 
-cp ./confs/* ~/.config/
+# Copy configurations to ~/.config
+cp -r ./confs/* $HOME/.config/
+mkdir ~/.config/dyn-wall-rs
 
+echo "theme1:light" > $HOME/Theme.txt
+
+# Put nvim in path
 echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
+
+# Always run fastfetch on every terminal you open
+# You can remove this if you want
 echo "fastfetch" >> ~/.bashrc
 
-./theme.sh frieren light
-
-mv theme.sh ~/
-
+# Enable bluetooth in case it is not enabled
 sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 
+# Delete directories cloned from git repos
 rm -rf ./nvim-linux-x86_64* ./yay
+
+systemctl reboot
