@@ -1,25 +1,34 @@
 #!/bin/bash
 
+# Make this part another script or a keybind in hyprland.conf
+# $(ls themes | sed -e 's:\.[^./]*$::' | wofi --show dmenu)
+
 THEME_FILE="$HOME/Theme.txt"
 
-if [ -n "$1" ] && [ -n "$2" ]; then 
-  THEME=$1
-  COLOR=$2
-
-  echo "$THEME:$COLOR" > $THEME_FILE
-else
-  if [ -f $THEME_FILE ]; then
-    IFS=":" read -r THEME COLOR < $THEME_FILE
-  fi
+if [ -f $THEME_FILE ]; then
+  IFS=":" read -r THEME COLOR < $THEME_FILE
 fi
 
-if [ -f "$HOME/Pictures/wallpapers/$THEME" ]; then
-  rm -rf .cache/hellwal/
-  if [ $COLOR = "dynamic" ]; then
-    hyprctl dispatch exec "dyn-wall-rs -d $HOME/Pictures/wallpapers/$THEME/ -b $HOME/theme-scripts/backend.sh"
-  else
-    ./backend.sh $HOME/Pictures/wallpapers/$THEME/$COLOR.jpg $COLOR
-  fi
+file="$HOME/themes/$THEME.txt"
+
+first_line=$(head -n 1 $file)
+
+if [[ $first_line == "type:dynamic-time" ]]; then
+  tail -n +2 $file > "$HOME/.config/dyn-wall-rs/config.toml"
+  hyprctl dispatch exec "dyn-wall-rs -b \"$HOME/theme-scripts/backend.sh $COLOR\""
 else
-  ./backend.sh $HOME/Pictures/wallpapers/$THEME.jpg $COLOR
+  if [[ $first_line == "type:dynamic-color" ]]; then
+    dark=$(sed '2q;d' $file)
+    light=$(sed '3q;d' $file)
+
+    if [[ $COLOR = "dark" ]]; then
+      selected=${dark#dark=}
+    else
+      selected=${light#light=}
+    fi
+  else
+    selected=$first_line
+  fi
+
+  $HOME/theme-scripts/backend.sh $COLOR $selected
 fi

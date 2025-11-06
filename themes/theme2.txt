@@ -1,0 +1,3 @@
+type:dynamic-color
+dark=/home/vitorlu/Pictures/wallpapers/zorin/dark.jpg
+light=/home/vitorlu/Pictures/wallpapers/zorin/light.jpg

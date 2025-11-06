@@ -62,6 +62,8 @@ cp -r ./wallpapers ~/Pictures/
 
 # Copy configurations to ~/.config
 cp -r ./confs/* $HOME/.config/
+cp -r theme-scripts $HOME
+cp -r themes $HOME
 mkdir ~/.config/dyn-wall-rs
 
 echo "theme1:light" > $HOME/Theme.txt
