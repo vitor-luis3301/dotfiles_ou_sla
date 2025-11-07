@@ -6,3 +6,5 @@
 - [X] Correct `theme.sh` to support `dyn-wall-rs`
 - [X] Add links to projects on `README.md`
 - [X] make a GUI for `theme.sh`
+- [ ] Make instalation and customization tutorials in `README.md`
+- [ ] Add all gifs in `README.md`
