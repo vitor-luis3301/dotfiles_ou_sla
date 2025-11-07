@@ -73,6 +73,8 @@ sudo cp -r /usr/share/docs/hellwal/templates $HOME/.config/hellwal
 
 echo "theme1:light" > $HOME/Theme.txt
 
+cp wofi_change_theme.sh ~
+
 # Put nvim in path
 echo 'export PATH=$PATH:/usr/bin/nvim/bin/' >> ~/.bashrc
 
