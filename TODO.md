@@ -4,5 +4,5 @@
 - [X] correct waybar's colors to mach hellwal's
 - [X] rewrite theme script to not generate hyprland's border colors by hand
 - [X] Correct `theme.sh` to support `dyn-wall-rs`
-- [ ] Add links to projects on `README.md`
+- [X] Add links to projects on `README.md`
 - [ ] make a GUI for `theme.sh`
