@@ -20,7 +20,7 @@
     "custom/separator"
   ],
   "modules-right": [
-    "custom/clipboard",
+    "custom/darkmode",
     "custom/separator",
     "memory",
     "temperature",
@@ -118,10 +118,12 @@
     "tooltip": false,
     "on-click": "wlogout"
   },
-  "custom/clipboard": {
-    "format": "cc",
-    "on-click": "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'",
-    "tooltip": true,
-    "tooltip-format": "Clipboard"
+  "custom/darkmode": {
+    "format": "{icon} {text}",
+    "exec": "~/.config/waybar/scripts/darkmode.sh",
+    "interval": 60,
+    "on-click": "~/.config/waybar/scripts/darkmode.sh change",
+    "tooltip": "Toggle feature",
+    "return-type": "json"
   }
 }
