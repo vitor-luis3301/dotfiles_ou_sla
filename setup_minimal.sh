@@ -42,7 +42,12 @@ cp -r ./wallpapers ~/Pictures/
 cp -r ./confs/* $HOME/.config/
 cp -r theme-scripts $HOME
 cp -r themes $HOME
+
+# make configuration folders for dyn-wall-rs and hellwal
 mkdir ~/.config/dyn-wall-rs
+mkdir $HOME/.config/hellwal $HOME/.cache/hellwal/cache
+# copy hellwal's templates to ~/.config
+sudo cp -r /usr/share/docs/hellwal/templates $HOME/.config/hellwal
 
 echo "theme1:light" > $HOME/Theme.txt
 
