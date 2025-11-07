@@ -5,4 +5,4 @@
 - [X] rewrite theme script to not generate hyprland's border colors by hand
 - [X] Correct `theme.sh` to support `dyn-wall-rs`
 - [X] Add links to projects on `README.md`
-- [ ] make a GUI for `theme.sh`
+- [X] make a GUI for `theme.sh`
