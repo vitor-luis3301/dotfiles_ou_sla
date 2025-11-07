@@ -6,4 +6,4 @@ times = [
   "18:00",
   "22:00",
 ]
-directory = "/home/vitorlu/Pictures/wallpapers/testbg/"
+directory = "/home/vitorlu/Pictures/wallpapers/lakeside/"
