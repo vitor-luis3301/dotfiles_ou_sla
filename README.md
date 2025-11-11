@@ -5,7 +5,8 @@ The repository has setup scripts that should work on any Arch instalation
 
 ## How to install
 
-> [!WARNING] This tutorial assumes you made a desktop installation of Arch with Hyprland (you can do this in `archinstall`)
+> [!WARNING]
+> This tutorial assumes you made a desktop installation of Arch with Hyprland (you can do this in `archinstall`)
 >
 > if you selected another environment or have a minimal installation (in other words, have not installed anything yet), then run this first:
 >
